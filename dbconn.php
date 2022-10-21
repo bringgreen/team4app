@@ -1,5 +1,5 @@
 <?php
-    $db_host = 'team4phpdb.ctqqsstwbq6p.sa-east-1.rds.amazonaws.com';
+    $db_host = 'team4db.cum5hkuudyqz.eu-west-3.rds.amazonaws.com';
     $db_user = 'admin';
     $db_pass = '1qaz2wsx';
     $db_name = 'web01';
