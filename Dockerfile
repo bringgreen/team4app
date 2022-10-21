@@ -8,8 +8,8 @@ RUN yum clean metadata
 RUN yum install -y php php-{pear,cli,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
 
 # update website files
-WORKDIR /home/ec2-user/environment/team4app
-COPY ./* /var/www/html/
+WORKDIR /home/ec2-user/environment
+COPY ./team4app /var/www/html/
 RUN chown -R apache:apache /var/www
 CMD ["/usr/sbin/httpd","-DFOREGROUND"]
 
