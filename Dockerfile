@@ -9,7 +9,7 @@ RUN yum install -y php php-{pear,cli,cgi,common,curl,mbstring,gd,mysqlnd,gettext
 
 # update website files
 WORKDIR /home/ec2-user/environment/team4app
-COPY ../team4app /var/www/html/
+COPY . /var/www/html/
 RUN chown -R apache:apache /var/www
 CMD ["/usr/sbin/httpd","-DFOREGROUND"]
 
