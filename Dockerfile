@@ -4,11 +4,12 @@ FROM amazonlinux:latest
 RUN yum update -y; yum clean all
 RUN yum install -y httpd amazon-linux-extras && yum install -y unzip && yum install -y mysql
 RUN amazon-linux-extras enable php7.4
-RUN yum clean metadata
+RUN yum clean metadeata
 RUN yum install -y php php-{pear,cli,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
 
 # update website files
-COPY ./*.* /var/www/html/
+WORKDIR /home/ec2-user/environment/team4app
+COPY ./* /var/www/html/
 RUN chown -R apache:apache /var/www
 CMD ["/usr/sbin/httpd","-DFOREGROUND"]
 
